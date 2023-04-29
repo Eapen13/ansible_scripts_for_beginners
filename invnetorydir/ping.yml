@@ -1,0 +1,7 @@
+--- 
+- name: pinging
+  hosts: ansible@172.25.250.11
+  tasks:
+    - name: ping
+      ping: 
+        data: ansible@172.25.250.11

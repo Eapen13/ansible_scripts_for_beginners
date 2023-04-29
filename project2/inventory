@@ -1,0 +1,7 @@
+[web_servers]
+ansible@172.25.250.11
+
+[hello]
+ansible@172.25.250.11
+
+

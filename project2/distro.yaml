@@ -1,0 +1,14 @@
+---
+- name: installing tree and vsftpd based on distros
+  hosts: all
+  become: yes
+  vars:
+   distros:
+    - CentOS
+    - RedHat
+    - Fedora
+  tasks: 
+   - name: installation started
+     yum: 
+      name: tree
+     when: ansible_distribution in distros

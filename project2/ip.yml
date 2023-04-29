@@ -1,0 +1,8 @@
+---
+- name: getting ip only
+  hosts: all
+  tasks: 
+   - name: your ip
+     debug:
+      msg: your ip address is {{ ansible_facts.default_ipv4.address }}
+...

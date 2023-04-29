@@ -1,0 +1,7 @@
+users: 
+   - username: jimmy
+     shell: /bin/bash
+   - username: tomy
+     shell: /bin/sh
+   - username: rahu
+     shell: /bin/bash

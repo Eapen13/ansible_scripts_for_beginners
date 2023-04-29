@@ -1,0 +1,10 @@
+---
+- name: testing
+  hosts: all
+  tasks: 
+   - name: testing /etc/passwd file
+     shell: cat /etc/passwd
+     register: jimmy
+   - debug: 
+      msg: echo "/etc/passwd contains user lisa" 
+     when: jimmy.stdout.find('lisa') != -1

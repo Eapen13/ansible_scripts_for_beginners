@@ -1,0 +1,10 @@
+---
+- name: checking variables
+  hosts: all
+  vars_files:
+    - /home/ansible/project2/var/userlist
+  tasks: 
+    - name: print array values
+      debug:
+       msg: the second value is {{ users[1] }} 
+...

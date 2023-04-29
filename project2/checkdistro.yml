@@ -1,0 +1,12 @@
+---
+- name: checking memory and installing
+  hosts: all
+  become: true
+  tasks: 
+   - name: installing httpd if memory is ok
+     yum: 
+      name: httpd
+      state: present
+     when: 
+      - ansible_distribution == "RedHat" 
+      - ansible_memfree_mb > 512

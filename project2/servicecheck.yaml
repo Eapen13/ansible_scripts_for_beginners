@@ -1,0 +1,11 @@
+---
+- name: restarting sshd if chrond is active
+  hosts: all
+  become: true
+  tasks: 
+   - name: check chrond is active
+     shell: systemctl is-active crond
+     register: active
+   - name: restarting sshd service
+     shell: systemctl restart sshd.service
+     when: active.rc == 0

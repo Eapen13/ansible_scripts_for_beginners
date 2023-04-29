@@ -1,0 +1,13 @@
+---
+- name: test register
+  hosts: all
+  tasks:
+   - name: testing the registers
+     shell: echo "{{ item }}"
+     loop: 
+      - jimmy
+      - rafter
+     register: echo 
+   - name: echoing...
+     debug: 
+      var: echo

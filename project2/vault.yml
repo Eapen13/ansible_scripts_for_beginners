@@ -1,0 +1,13 @@
+---
+- name: testing
+  hosts: all
+  become: true
+  vars_files:
+    - /home/ansible/project2/vault
+  tasks: 
+    - name: creating users
+      user:
+       name: "{{ username }}"
+       password: "{{ password }}"
+...
+       

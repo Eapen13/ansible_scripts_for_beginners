@@ -1,0 +1,25 @@
+---
+  - name: maintaining httpd service
+    hosts:  ansible@172.25.250.11
+    become: true
+    tasks: 
+      - name: installing httpd
+        yum: 
+          name: httpd
+      - name: starting httpd
+        service: 
+          name: httpd  
+          state: started  
+          enabled: true
+      - name: adding httpd to firewall
+        ansible.posix.firewalld: 
+          service: http
+          permanent: true
+          state: enabled
+      - name: welcome text
+        copy: 
+          content: "hello user"
+          dest: /var/www/html/index.html
+
+
+...

@@ -1,0 +1,14 @@
+---
+- name: my variable program
+  hosts: all
+  become: true
+  vars: 
+   my_jimmy:
+    - tree
+    - httpd
+    - vsftpd
+  tasks:
+   - name: starting jimmy's 
+     yum:
+      name: "{{ item }}"
+     loop: "{{ my_jimmy }}"

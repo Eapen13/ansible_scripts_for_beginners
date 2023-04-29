@@ -1,0 +1,9 @@
+---
+- name: debugging {{ web_service }}
+  hosts:  ansible@172.25.250.11
+  tasks: 
+    - name: installing {{ web_package }} 
+      debug:
+        msg:  "{{ web_package }}"
+
+...

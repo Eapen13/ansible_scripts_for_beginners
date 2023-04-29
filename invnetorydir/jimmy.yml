@@ -1,0 +1,9 @@
+---
+  - name: jimmy is configuring ansible
+    hosts: ansible@172.25.250.11
+    become: true
+    tasks:  
+      - name: installing jimmy's service
+        yum: name=tree 
+
+...

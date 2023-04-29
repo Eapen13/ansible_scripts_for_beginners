@@ -1,0 +1,10 @@
+---
+- name: deployment of vsftpd
+  hosts: ansible@172.25.250.11
+  tasks:
+    - name: installing vsftpd
+      yum: name=vsftpd
+    - name: enabling vsftpd
+      service: name=vsftpd enabled=true
+
+...

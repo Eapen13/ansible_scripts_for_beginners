@@ -1,0 +1,9 @@
+---
+- name: testing {{ web_package }} 
+  hosts: hello
+  tasks:
+    - name: installing {{ web_package }} 
+      debug: 
+        msg: installation of {{ web_package }}  success...!!
+
+...

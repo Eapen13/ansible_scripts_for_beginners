@@ -1,0 +1,14 @@
+---
+- name: creation of users
+  hosts: all
+  become: true
+  tasks: 
+  - name: creating now
+    user: 
+     name: "{{ item.name }}"
+     groups: "{{ item.group }}"
+    with_items:
+     - name: terminal
+       group: wheel
+     - name: linux
+       group: student
